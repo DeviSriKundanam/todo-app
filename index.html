@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://Kit.fontawesome.com/ea6d4fec5e.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body{
+			background-color: lightpink;
+			background-image: url(https://purepng.com/public/uploads/large/heart-icon-y1k.png),url(https://p.kindpng.com/picc/s/564-5648699_free-png-download-white-mobile-frame-png-images.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-attachment: fixed;
+			background-size: 25%,35%;
+		}
+		#newTodo{
+			border-radius: 10px;
+			padding: 1%;
+			width: 20%;
+			font-size: 20px;
+		}
+		#button{
+			border-radius: 20px;
+			padding: 0.7% 1%;
+			width: 8%;
+			font-size: 18px;
+		}
+	</style>
+</head>
+<body>
+	<div class="html">
+	<p><input placeholder="Enter note" id="newTodo"value=""/></p>
+	<ul></ul>
+	<button id="button" onclick="todo()">submit</button>
+	</div>
+	<script type="text/javascript">
+	function todo(){
+	let newTodo=document.getElementById("newTodo").value
+	//console.log(name)
+	document.getElementById("newTodo").value=""
+	if(newTodo===""){
+		alert("enter a todo")
+	}
+	else{
+		addTodo(newTodo)
+	}
+	}
+	function addTodo(newValue){
+		let ul=document.querySelector("ul")
+		console.log(ul)
+		let li=document.createElement("li")
+		li.innerHTML=`
+		<span class="listitem">${newValue}</span>
+		<i class="fa-solid fa-rectangle-xmark"></i>`
+		li.classList.add("list-type")
+		ul.appendChild(li)
+	}
+	</script>
+</body>
+</html>
